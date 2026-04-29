@@ -1,0 +1,104 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}تواصل معنا — بتلة وازدهار{% endblock %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">تواصل معنا</h2>
+        <p class="section-sub">يسعدنا أن نسمع منك — أسئلة، طلبات، أو مجرد تحية.</p>
+
+        <div class="contact-grid">
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>زورونا</h2>
+                <p>تفضل بزيارة مرسمنا أو تواصل معنا في أي وقت — يسعدنا مساعدتك في إيجاد الباقة المثالية.</p>
+
+                <div class="info-item">
+                    <div class="info-icon">&#x1F4CD;</div>
+                    <span>14 درب الأزهار، حي الحدائق</span>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">&#x1F4DE;</div>
+                    <span>+966 55 012 3456</span>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">&#x2709;&#xFE0F;</div>
+                    <a href="mailto:hello@petalandbloom.com" style="color:inherit;">hello@petalandbloom.com</a>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">&#x1F552;</div>
+                    <span>الاثنين – السبت &nbsp; 9 ص – 7 م</span>
+                </div>
+
+                <img
+                    src="https://picsum.photos/seed/flowers-shop/500/280"
+                    alt="محل زهورنا"
+                    style="width:100%; border-radius:14px; margin-top:2rem; border:3px solid var(--pink-light);"
+                >
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-card">
+                <h3 style="font-family:'ThmanyahSerif',serif; color:var(--pink-deep); font-size:1.5rem; margin-bottom:1.5rem;">
+                    أرسل رسالة
+                </h3>
+
+                {% if success %}
+                <div class="alert-success">
+                    &#x2713; شكراً لك! تم استلام رسالتك وسنرد عليك في أقرب وقت.
+                </div>
+                {% endif %}
+
+                <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label for="name">الاسم</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-input"
+                            placeholder="محمد العمري"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="example@email.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            class="form-textarea"
+                            placeholder="أخبرنا بما تبحث عنه…"
+                            rows="5"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width:100%;">
+                        إرسال الرسالة
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

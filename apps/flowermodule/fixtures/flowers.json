@@ -1,0 +1,114 @@
+[
+  {
+    "model": "flowermodule.flower",
+    "pk": 1,
+    "fields": {
+      "name": "الوردة الحمراء",
+      "scientific_name": "Rosa rubiginosa",
+      "description": "الوردة الحمراء رمز عالمي للحب والعاطفة، زُرعت منذ آلاف السنين وتُعدّ من أقدم النباتات المزهرة التي عرفها الإنسان.",
+      "color": "أحمر",
+      "origin": "آسيا",
+      "season": "spring",
+      "care_tips": "تحتاج إلى ريّ كل يومين. ضعها في مكان مشمس لا يقل عن 6 ساعات يومياً. قلّم الفروع الجافة بانتظام.",
+      "image_url": "https://picsum.photos/seed/red-rose/400/300"
+    }
+  },
+  {
+    "model": "flowermodule.flower",
+    "pk": 2,
+    "fields": {
+      "name": "التوليب الوردي",
+      "scientific_name": "Tulipa gesneriana",
+      "description": "من أجمل زهور الربيع، نشأت في آسيا الوسطى وانتشرت في هولندا التي أصبحت مرتبطة بها حتى اليوم.",
+      "color": "وردي",
+      "origin": "آسيا الوسطى",
+      "season": "spring",
+      "care_tips": "تفضّل التربة الجيدة التصريف والشمس المباشرة. تُزرع البصيلات في الخريف لتزهر في الربيع.",
+      "image_url": "https://picsum.photos/seed/pink-tulip/400/300"
+    }
+  },
+  {
+    "model": "flowermodule.flower",
+    "pk": 3,
+    "fields": {
+      "name": "زنبق الوادي",
+      "scientific_name": "Convallaria majalis",
+      "description": "زهرة بيضاء رقيقة ذات عطر مميز، تنمو في غابات أوروبا وتُعدّ رمزاً للنقاء والسعادة.",
+      "color": "أبيض",
+      "origin": "أوروبا",
+      "season": "spring",
+      "care_tips": "تفضّل الظل الجزئي والتربة الرطبة. تنتشر بسرعة وتشكّل سجادة خضراء جميلة.",
+      "image_url": "https://picsum.photos/seed/white-lily/400/300"
+    }
+  },
+  {
+    "model": "flowermodule.flower",
+    "pk": 4,
+    "fields": {
+      "name": "عباد الشمس",
+      "scientific_name": "Helianthus annuus",
+      "description": "زهرة صفراء كبيرة تتجه دائماً نحو الشمس، موطنها الأصلي أمريكا الشمالية وتُزرع على نطاق واسع لبذورها وزيتها.",
+      "color": "أصفر",
+      "origin": "أمريكا الشمالية",
+      "season": "summer",
+      "care_tips": "تحتاج إلى شمس مباشرة طوال اليوم وريّ منتظم. تنمو بسرعة وقد يصل ارتفاعها إلى 3 أمتار.",
+      "image_url": "https://picsum.photos/seed/sunflower/400/300"
+    }
+  },
+  {
+    "model": "flowermodule.flower",
+    "pk": 5,
+    "fields": {
+      "name": "اللافندر",
+      "scientific_name": "Lavandula angustifolia",
+      "description": "نبات عطري بنفسجي اللون، يُعرف بخصائصه المهدئة ورائحته الزكية. شائع في جنوب فرنسا ويُستخدم في الطب التقليدي.",
+      "color": "بنفسجي",
+      "origin": "البحر الأبيض المتوسط",
+      "season": "summer",
+      "care_tips": "يتحمّل الجفاف ويحتاج إلى تربة جيدة التصريف وشمس كاملة. تجنّب الإفراط في الريّ.",
+      "image_url": "https://picsum.photos/seed/lavender/400/300"
+    }
+  },
+  {
+    "model": "flowermodule.flower",
+    "pk": 6,
+    "fields": {
+      "name": "الفاوانيا",
+      "scientific_name": "Paeonia lactiflora",
+      "description": "زهرة وردية فاخرة كبيرة الحجم، تُعدّ من أرقى الزهور في الثقافة الصينية ورمزاً للازدهار والحظ الحسن.",
+      "color": "وردي فاتح",
+      "origin": "الصين",
+      "season": "spring",
+      "care_tips": "تحتاج إلى تربة غنية وشمس جزئية. تعيش لسنوات طويلة وتزداد جمالاً مع الوقت.",
+      "image_url": "https://picsum.photos/seed/peony/400/300"
+    }
+  },
+  {
+    "model": "flowermodule.flower",
+    "pk": 7,
+    "fields": {
+      "name": "الأقحوان",
+      "scientific_name": "Chrysanthemum morifolium",
+      "description": "زهرة خريفية بألوان متعددة، لها مكانة خاصة في الثقافتين الصينية واليابانية حيث ترمز إلى طول العمر.",
+      "color": "أصفر ووردي وأبيض",
+      "origin": "الصين",
+      "season": "autumn",
+      "care_tips": "تحتاج إلى شمس جزئية وريّ منتظم. قطف الأزهار المتيبسة يشجع على النمو الجديد.",
+      "image_url": "https://picsum.photos/seed/chrysanthemum/400/300"
+    }
+  },
+  {
+    "model": "flowermodule.flower",
+    "pk": 8,
+    "fields": {
+      "name": "زهرة الثلج",
+      "scientific_name": "Galanthus nivalis",
+      "description": "من أوائل الزهور التي تظهر في الشتاء، تنبثق من تحت الثلج لتبشّر بقدوم الربيع. رمز الأمل والتجدد.",
+      "color": "أبيض",
+      "origin": "أوروبا",
+      "season": "winter",
+      "care_tips": "تفضّل الظل الجزئي والتربة الرطبة الباردة. لا تحتاج إلى عناية كبيرة وتتكاثر بمفردها.",
+      "image_url": "https://picsum.photos/seed/snowdrop/400/300"
+    }
+  }
+]

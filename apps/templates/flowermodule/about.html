@@ -1,0 +1,81 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}من نحن — عالم الزهور{% endblock %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <div class="about-grid">
+            <div>
+                <img
+                    class="about-img"
+                    src="https://cdn.pixabay.com/photo/2020/04/02/06/17/flower-4993647_1280.jpg"
+                    alt="حديقة نباتية"
+                >
+            </div>
+            <div class="about-text">
+                <h2>عن الموقع</h2>
+                <p>
+                    "عالم الزهور" موسوعة رقمية مخصصة لمحبّي الطبيعة والنباتات.
+                    هدفنا تقديم معلومات دقيقة وشاملة عن الزهور من حول العالم — أصولها،
+                    مواسم ازدهارها، واحتياجات العناية بها.
+                </p>
+                <p>
+                    نؤمن بأن معرفة الزهور تُعمّق تقديرنا لجمال الطبيعة.
+                    من الوردة الحمراء في آسيا إلى زهرة الثلج في أوروبا،
+                    كل زهرة تحمل قصة تستحق أن تُروى.
+                </p>
+                <p>
+                    يتوسّع الموقع باستمرار بإضافة أنواع جديدة وتحديث المعلومات
+                    استناداً إلى أحدث الأبحاث النباتية.
+                </p>
+                <a href="{% url 'search' %}" class="btn btn-primary" style="margin-top:0.5rem;">ابحث الآن</a>
+
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-number">{{ total }}</div>
+                        <div class="stat-label">نوع موثّق</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">{{ origins }}</div>
+                        <div class="stat-label">موطن مختلف</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">مواسم مُغطّاة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">ما يميّزنا</h2>
+        <p class="section-sub">موسوعة نباتية موثوقة ومبسّطة للجميع.</p>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">&#x1F4DA; معلومات موثّقة</h3>
+                    <p class="card-desc">كل معلومة مستقاة من مصادر علمية وأبحاث نباتية موثوقة.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">&#x1F50D; بحث سهل</h3>
+                    <p class="card-desc">ابحث عن أي زهرة بالاسم أو اللون أو الموطن الأصلي بخطوة واحدة.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">&#x1F331; نصائح العناية</h3>
+                    <p class="card-desc">لكل زهرة نصائح عملية للعناية بها في المنزل أو الحديقة.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

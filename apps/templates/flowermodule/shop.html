@@ -1,0 +1,55 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}المتجر — بتلة وازدهار{% endblock %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">كتالوج زهورنا</h2>
+        <p class="section-sub">تصفح جميع الزهور المتاحة — الأسعار لكل باقة.</p>
+
+        {% if flowers %}
+        <div class="table-wrapper">
+            <table class="flower-table">
+                <thead>
+                    <tr>
+                        <th>الصورة</th>
+                        <th>الاسم</th>
+                        <th>اللون</th>
+                        <th>الوصف</th>
+                        <th>السعر</th>
+                        <th>التوفر</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for flower in flowers %}
+                    <tr>
+                        <td>
+                            <img class="thumb" src="{{ flower.image_url }}" alt="{{ flower.name }}">
+                        </td>
+                        <td><strong>{{ flower.name }}</strong></td>
+                        <td>{{ flower.color }}</td>
+                        <td>{{ flower.description }}</td>
+                        <td class="price-cell">${{ flower.price }}</td>
+                        <td>
+                            {% if flower.in_stock %}
+                                <span class="badge badge-in">متوفر</span>
+                            {% else %}
+                                <span class="badge badge-out">نفد المخزون</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>&#x1F338; المتجر قيد التجهيز — عد قريباً!</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}

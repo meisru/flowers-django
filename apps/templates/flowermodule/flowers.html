@@ -1,0 +1,45 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}الزهور — عالم الزهور{% endblock %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">موسوعة الزهور</h2>
+        <p class="section-sub">معلومات تفصيلية عن كل زهرة — الأصل، الموسم، وطريقة العناية.</p>
+
+        {% if flowers %}
+        <div class="table-wrapper">
+            <table class="flower-table">
+                <thead>
+                    <tr>
+                        <th>الصورة</th>
+                        <th>الاسم</th>
+                        <th>الاسم العلمي</th>
+                        <th>اللون</th>
+                        <th>الموطن الأصلي</th>
+                        <th>الموسم</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for flower in flowers %}
+                    <tr>
+                        <td><a href="{{ flower.image_url }}" target="_blank"><img class="thumb" src="{{ flower.image_url }}" alt="{{ flower.name }}"></a></td>
+                        <td><strong>{{ flower.name }}</strong></td>
+                        <td><em style="color:var(--text-light); font-size:0.88rem;">{{ flower.scientific_name }}</em></td>
+                        <td>{{ flower.color }}</td>
+                        <td>{{ flower.origin }}</td>
+                        <td><span class="tag tag-season">{{ flower.get_season_display }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-state"><p>&#x1F338; لا توجد بيانات متاحة حالياً.</p></div>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}

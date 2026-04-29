@@ -1,0 +1,72 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}البحث — عالم الزهور{% endblock %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">البحث عن زهرة</h2>
+        <p class="section-sub">ابحث بالاسم، الاسم العلمي، الموطن، أو اللون.</p>
+
+        <!-- Search Form -->
+        <form method="get" action="{% url 'search' %}" class="search-form">
+            <div class="search-row">
+                <input
+                    type="text"
+                    name="q"
+                    class="form-input search-input"
+                    placeholder="مثال: وردة، Lavandula، الصين…"
+                    value="{{ query }}"
+                >
+                <select name="color" class="form-input search-select">
+                    <option value="">كل الألوان</option>
+                    {% for c in colors %}
+                    <option value="{{ c }}" {% if color == c %}selected{% endif %}>{{ c }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary">بحث</button>
+            </div>
+        </form>
+
+        <!-- Results -->
+        {% if results is not None %}
+            {% if results %}
+            <p class="results-count">تم العثور على {{ results|length }} نتيجة</p>
+            <div class="cards-grid">
+                {% for flower in results %}
+                <div class="card">
+                    <a href="{{ flower.image_url }}" target="_blank"><img src="{{ flower.image_url }}" alt="{{ flower.name }}"></a>
+                    <div class="card-body">
+                        <p class="card-meta">{{ flower.scientific_name }}</p>
+                        <h3 class="card-title">{{ flower.name }}</h3>
+                        <p class="card-desc">{{ flower.description }}</p>
+                        {% if flower.care_tips %}
+                        <div class="care-box">
+                            <strong>&#x1F331; العناية:</strong> {{ flower.care_tips }}
+                        </div>
+                        {% endif %}
+                        <div class="card-tags">
+                            <span class="tag tag-color">{{ flower.color }}</span>
+                            <span class="tag tag-origin">{{ flower.origin }}</span>
+                            <span class="tag tag-season">{{ flower.get_season_display }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty-state">
+                <p>&#x1F50D; لم يتم العثور على نتائج لـ "{{ query }}{{ color }}".</p>
+            </div>
+            {% endif %}
+        {% else %}
+        <div class="search-hint">
+            <p>&#x1F338; اكتب كلمة في مربع البحث للعثور على الزهرة التي تبحث عنها.</p>
+        </div>
+        {% endif %}
+
+    </div>
+</section>
+
+{% endblock %}
