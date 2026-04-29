@@ -1,4 +1,4 @@
-# عالم الزهور — Flowers World
+# Flowers Website 
 
 An informational Arabic website about flowers built with Django.
 
